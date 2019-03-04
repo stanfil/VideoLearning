@@ -1,0 +1,12 @@
+.for-container {
+    width: calc(60% - 7px);
+    height: calc(100vh - 64px);
+    position: relative;
+    left: -1px;
+}
+
+
+
+.for-editor-wrapper .for-preview {
+    height: 100%;
+}

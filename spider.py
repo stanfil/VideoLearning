@@ -28,6 +28,11 @@ for item in res:
 for i in range(len(courses)):
     link = courses[i]['link']
     res = requests.get('https://haoqicat.com/'+link+'/routeInfo.json').json()['localProps']['toc']
+    if 'cover_video' not in res:
+        vintro = 'index'
+    else:
+        vintro = res['cover_video']
+    courses[i]['vintro'] = res['vlink']+'/' + vintro + '.mp4'
     courses[i]['intro'] = res['intro']
     courses[i]['price'] = res['price']
     courses[i]['chapters'] = res['content'][0]['section']
@@ -37,6 +42,8 @@ for i in range(len(courses)):
         sublink = courses[i]['chapters'][j]['link']
         markdown = requests.get('https://haoqicat.com/'+link+'/'+sublink+'/routeInfo.json').json()['localProps']['markdown']
         courses[i]['chapters'][j]['markdown'] = markdown
+        video = 'https://haoqicat-1253322599.costj.myqcloud.com/'+courses[i]['link']+'/'+sublink+'.mp4'
+        courses[i]['chapters'][j]['video'] = video
         print(i,j)
     collection.insert_one(courses[i])
 

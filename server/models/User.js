@@ -1,7 +1,7 @@
 let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
-let UseSchema = new Schema({
+let UserSchema = new Schema({
     email: String,
     password: String,
     username: String,
@@ -9,3 +9,5 @@ let UseSchema = new Schema({
 },{
     timestamps: true,
 })
+
+module.exports = mongoose.model("User", UserSchema)

@@ -1,0 +1,19 @@
+pre {
+    padding: 10px 16px;
+    overflow: auto;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    line-height: 1.8;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+p {
+    font-size: 16px;
+    word-break: break-word;
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    line-height: 2.2;
+}
+
+a {
+    color: #00bcd4;
+}
